@@ -1,0 +1,19 @@
+git config --global user.name [username]
+git config --global user,email [usermailid]
+touch git ignore
+git init
+git add .
+
+[manually create git repo]
+
+******************************************
+
+Dockerfile
+FROM node:alpine
+COPY . /ab
+CMD node /ab/a.js
+
+run= docker build -t 'foldername' .
+     docker run folder name
+     docker image ls
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery mobile</title>
+
+    <!-- The jQuery Mobile CSS theme file (optional, if you are overriding the default theme) -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- //The jQuery core JavaScript file -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- //The jQuery Mobile core JavaScript file -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+    <!-- page1 -->
+    <div data-role="page" id="page1">
+
+        <div data-role="header" data-theme="b">
+            <h1>XYZ COLLEGE</h1>
+        </div>
+        <div data-role="navbar" data-theme="c">
+            <ul>
+                <li><a href="#page2" class="ui-btn-active" data-transition="flip" data-icon="action">Register</a></li>
+                <li><a href="#page3" data-transition="pop" data-icon="mail">Contact</a></li>
+            </ul>
+        </div>
+        <div data-role="main" content="ui-content">
+            <p style="color: blueviolet; text-align: center; font-size: 20px;">We are Changing the World & our Weapon is Quality Education</p>
+            <center>
+                <img src="C:\Users\HP\Pictures\Screenshots\Screenshot (5).png" alt="" height="400" width="300">
+            </center>
+            <br>
+            <br>
+        </div>
+        <center>
+        <div data-role="footer"  data-theme="b">
+            <div>
+                <p>Connect with us</p>
+                <a href="">Linkdin</a><br>
+                <a href="">Instagram</a>
+                <p>Copyright, 2023 | Mansi Ingale</p>
+            </div>
+        </div>
+        </center>
+    </div>
+    <!-- page2 -->
+    <div data-role="page" id="page2">
+
+        <div data-role="header"  data-theme="b">
+            <h1>Registration Form</h1>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1" class="ui-btn-active" data-transition="slidedown" data-icon="home">Home</a></li>
+                <li><a href="#page3" data-transition="slideup" data-icon="mail">Contact</a></li>
+            </ul>
+        </div>
+        <div data-role="main" content="ui-content">
+            <form>
+                <div class="ui-grid-a">
+                  <div class="ui-block-a">
+                    <label for="name">Name:</label>
+                  </div>
+                  <div class="ui-block-b">
+                    <input type="text" name="name" id="name">
+                  </div>
+                  <div class="ui-block-a">
+                    <label for="email">Email:</label>
+                  </div>
+                  <div class="ui-block-b">
+                    <input type="email" name="email" id="email">
+                  </div>
+                  <div class="ui-block-a">Confirm</div>
+                  <div class="ui-block-b">
+                    <input type="submit" value="Submit">
+                  </div>
+                </div>
+              </form>
+              <div id="eventOutput"></div>
+        </div>
+        <center>
+        <div data-role="footer" data-theme="b">
+            <div>
+                <p>Connect with us</p>
+                <a href="">Linkdin</a><br>
+                <a href="">Instagram</a>
+                <p>Copyright, 2023 | Mansi Ingale</p>
+            </div>
+        </div>
+        </center>
+    </div>
+
+
+        <!-- page3 -->
+
+    <div data-role="page" id="page3">
+        <!-- <div data-role="panel" id="mypanel">
+            <p>we are always available</p>
+        </div> -->
+        <div data-role="header"  data-theme="b">
+            <h1>Contact Us</h1>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page2" class="ui-btn-active" data-transition="turn" data-icon="action">Register</a></li>
+                <li><a href="#page1" data-transition="flow" data-icon="home">Home</a></li>
+                <li><a href="#page4" data-icon="bar">Pannel</a></li>
+            </ul>
+        </div>
+        
+        <div data-role="main" content="ui-content">
+            <div><h1>contact us</h1>
+                <p>Mobile No:9865896532</p>
+                <p>Email id : aalKADMJ@gmail.com</p>
+            </div>
+            
+        </div>
+            <center>
+            <div data-role="footer"  data-theme="b">
+                <div>
+                    <p>Connect with us</p>
+                    <a href="">Linkdin</a><br>
+                    <a href="">Instagram</a>
+                    <p>Copyright, 2023 | Mansi Ingale</p>
+                    
+                </div>
+
+            </div>
+            </center>
+            
+    </div>
+
+    <div data-role="page" id="page4">
+
+        
+        <!-- header -->
+        <!-- <div data-role="header">
+            <p>Unity is Strength</p>
+        </div>-->
+        <div data-role="panel" id="mypanel" data-position="left">
+            <p>Unity is strength</p>
+        </div> 
+        <!-- content -->
+        <div data-role="main"  content="ui-content">
+            <a href="#mypanel" data-role="button" data-theme="b">Open Panel</a>
+        </div>
+        <!-- footer -->
+        
+     </div>
+
+
+    <script>
+        // Event handling
+        $(document).on("pagecreate", "#page2", function() {
+          $("form").on("submit", function(event) {
+            event.preventDefault();
+            var name = $("#name").val();
+            var email = $("#email").val();
+            $("#nameValue").text(name);
+            $("#emailValue").text(email);
+            $.mobile.changePage("#page1");
+          });
+        });
+      </script> 
+    
+</body>
+
+</html>
